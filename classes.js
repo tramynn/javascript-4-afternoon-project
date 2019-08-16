@@ -104,25 +104,43 @@ class ProgressiveManager extends Manager {
       this.bonus = 0;
   }
 
-  updateTitle() {
-    if (this.reports >= 1 && this.reports <= 3) {
+  hire(employee) {
+    this.reports.push(employee);
+    if (this.reports.length === 0) {
+      this.title = 'Not a manager';
+    } else if (this.reports.length >= 1 && this.reports.length <= 3) {
       this.title = 'Barely Manager';
-    } else if (this.reports >= 4 && this.reports <= 10) {
+    } else if (this.reports.length >= 4 && this.reports.length <= 10) {
       this.title = 'Mostly Manager';
-    } else if (this.reports >= 11 && this.reports <= 50) {
+    } else if (this.reports.length >= 11 && this.reports.length <= 50) {
       this.title = 'Manager';
-    } else if (this.reports >= 51 && this.reports <= 100) {
+    } else if (this.reports.length >= 51 && this.reports.length <= 100) {
       this.title = 'Manager Plus';
-    } else if (this.reports >= 101) {
+    } else if (this.reports.length >= 101) {
       this.title = 'Bestest Manager';
     }
-    return this.title;
   }
-  fire() {
+
+  fire(index) {
     this.bonus += 100;
+
+    
+    this.reports.splice(index, 1);
+    if (this.reports.length === 0) {
+      this.title = 'Not a manager';
+    } else if (this.reports.length >= 1 && this.reports.length <= 3) {
+      this.title = 'Barely Manager';
+    } else if (this.reports.length >= 4 && this.reports.length <= 10) {
+      this.title = 'Mostly Manager';
+    } else if (this.reports.length >= 11 && this.reports.length <= 50) {
+      this.title = 'Manager';
+    } else if (this.reports.length >= 51 && this.reports.length <= 100) {
+      this.title = 'Manager Plus';
+    } else if (this.reports.length >= 101) {
+      this.title = 'Bestest Manager';
+    }
   }
 }
-
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
