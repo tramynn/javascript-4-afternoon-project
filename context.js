@@ -15,18 +15,27 @@
   Create an object called user which has the following properties.
   username --> which is a string
   email --> which is a string
-  getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
+  getUsername --> which is a function that returns the current object's username property. 
+  *Don't use 'user' instead use the 'this' keyword*
 */
   
 
 //Code Here
-
+const user = {
+  username: '',
+  email: '',
+  getUsername: function() {
+    return this.username
+  }
+}
 
 
 ////////// PROBLEM 2 //////////
 
 /*
- Below we have the class Animal.  The eat method is using the "this" keyword.  Use the "new" keyword to assign context to "this", and save the instance to a variable named animal1.  You can pass anything you want in for name, species and food.
+ Below we have the class Animal.  The eat method is using the "this" keyword.  
+ Use the "new" keyword to assign context to "this", and save the instance to a variable named animal1.  
+ You can pass anything you want in for name, species and food.
 */
 
 class Animal {
@@ -42,7 +51,7 @@ class Animal {
 }
 
 //Code Here
-
+let animal1 = new Animal('Tramy', 'homo sapien', 'coffee');
 
 
 ////////// PROBLEM 3 //////////
